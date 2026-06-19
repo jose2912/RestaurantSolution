@@ -1,0 +1,38 @@
+﻿@model Restaurant.Entities.DetallePedido
+@{
+    ViewData["Title"] = "Agregar Detalle";
+    var productos = ViewBag.Productos as List<Restaurant.Entities.Producto>;
+}
+
+<h2>Agregar Producto al Pedido</h2>
+
+<form asp-action="AgregarDetalle" method="post">
+    <input type="hidden" asp-for="PedidoId" value="@ViewBag.PedidoId" />
+
+    <div class="form-group">
+        <label>Producto</label>
+        <select asp-for="ProductoId" class="form-control" required>
+           <option value="">-- Seleccione un producto --</option>
+           @if (productos != null)
+           {
+                @foreach (var p in productos)
+                {
+                    <option value="@p.ProductoId">@p.Nombre (@p.PrecioUnitario)</option>
+                }
+           }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Cantidad</label>
+        <input asp-for="Cantidad" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Precio Unitario</label>
+        <input asp-for="PrecioUnitario" class="form-control" step="0.01" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-controller="Pedidos" asp-action="Detalle" asp-route-id="@ViewBag.PedidoId" class="btn btn-secondary">Volver</a>
+</form>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Restaurant.Entities.Pedido>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if (TempData["SuccessMessage"] != null)
+        {
+                <text>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: '@TempData["SuccessMessage"]',
+                        confirmButtonColor: '#3085d6'
+                    });
+                </text>
+        }
+        else if (TempData["ErrorMessage"] != null)
+        {
+                <text>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: '@TempData["ErrorMessage"]',
+                        confirmButtonColor: '#d33'
+                    });
+                </text>
+        }
+    </script>
+}
+
+
+<h2>Lista de Pedidos</h2>
+
+<a class="btn btn-success mb-3"
+   asp-controller="Pedidos"
+   asp-action="Form">
+    Nuevo Pedido
+</a>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.PedidoId</td>
+                    <td>@pedido.FechaPedido.ToShortDateString()</td>
+                    <td>@pedido.Estado</td>
+                    <td>
+                        <a class="btn btn-info"
+                           asp-controller="Pedidos"
+                           asp-action="Detalle"
+                           asp-route-id="@pedido.PedidoId">
+                            Detalle
+                        </a>
+
+                        <form asp-controller="Documentos" asp-action="Precuenta" method="get" style="display:inline">
+                            <input type="hidden" name="id" value="@pedido.PedidoId" />
+                            <button type="submit" class="btn btn-primary">Precuenta</button>
+                        </form>
+
+                        <form asp-controller="Pedidos" asp-action="Eliminar" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@pedido.PedidoId" />
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay pedidos registrados.</p>
+}

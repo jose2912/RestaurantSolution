@@ -1,0 +1,66 @@
+﻿@model Restaurant.Entities.Pedido
+@using Restaurant.Entities
+
+<h2>Detalles del Pedido @Model.PedidoId</h2>
+<p><strong>Estado:</strong> @Model.Estado</p>
+
+<!-- Tabla de detalles -->
+@if (Model.DetallePedidos != null && Model.DetallePedidos.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Producto Id</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total Línea</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detalle in Model.DetallePedidos)
+            {
+                <tr>
+                    <td>@detalle.ProductoId</td>
+                    <td>@detalle.Cantidad</td>
+                    <td>@detalle.PrecioUnitario</td>
+                    <td>@(detalle.Cantidad* detalle.PrecioUnitario)</td>
+                    <td>
+                        <form asp-action="EliminarDetalle" method="post" style="display:inline">
+                            <input type="hidden" name="detalleId" value="@detalle.DetalleId" />
+                            <input type="hidden" name="pedidoId" value="@Model.PedidoId" />
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay productos en este pedido.</p>
+}
+
+<hr />
+
+<!-- Botones de navegación -->
+<a class="btn btn-success"
+   asp-controller="Pedidos"
+   asp-action="AgregarDetalle"
+   asp-route-pedidoId="@Model.PedidoId">
+    Agregar Producto
+</a>
+
+<a class="btn btn-primary"
+   asp-controller="Pedidos"
+   asp-action="Precuenta"
+   asp-route-id="@Model.PedidoId">
+    Ver Precuenta
+</a>
+
+<a class="btn btn-secondary"
+   asp-controller="Pedidos"
+   asp-action="Index">
+    Volver a la Lista
+</a>

@@ -1,0 +1,28 @@
+﻿@model Restaurant.Entities.Precuenta
+
+<h2>Precuenta del Pedido @Model.PedidoId</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>SubTotal</th>
+        <td>@Model.SubTotal</td>
+    </tr>
+    <tr>
+        <th>Descuento</th>
+        <td>@Model.Descuento</td>
+    </tr>
+    <tr>
+        <th>Impuesto</th>
+        <td>@Model.Impuesto</td>
+    </tr>
+    <tr>
+        <th>Recargo</th>
+        <td>@Model.Recargo</td>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td><strong>@Model.Total</strong></td>
+    </tr>
+</table>
+
+<a asp-controller="Pedidos" asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>

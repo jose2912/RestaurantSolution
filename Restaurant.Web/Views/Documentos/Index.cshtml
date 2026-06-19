@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Restaurant.Entities.DocumentoPago>
+
+<h2>Documentos</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Pedido</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var doc in Model)
+            {
+                <tr>
+                    <td>@doc.DocumentoId</td>
+                    <td>@doc.PedidoId</td>
+                    <td>@doc.FechaDocumento.ToShortDateString()</td>
+                    <td>@doc.Total</td>
+                    <td>@doc.Estado</td>
+                    <td>
+                        <form asp-controller="Documentos" asp-action="CambiarEstado" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@doc.DocumentoId" />
+                            <input type="hidden" name="estado" value="Facturado" />
+                            <button type="submit" class="btn btn-success btn-sm">Facturar</button>
+                        </form>
+
+                        <form asp-controller="Documentos" asp-action="CambiarEstado" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@doc.DocumentoId" />
+                            <input type="hidden" name="estado" value="Anulado" />
+                            <button type="submit" class="btn btn-danger btn-sm">Anular</button>
+                        </form>
+
+                        <form asp-controller="Documentos" asp-action="CambiarEstado" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@doc.DocumentoId" />
+                            <input type="hidden" name="estado" value="En Proceso" />
+                            <button type="submit" class="btn btn-warning btn-sm">En Proceso</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6">No hay documentos generados.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var successMessage = '@TempData["SuccessMessage"]';
+            var errorMessage = '@TempData["ErrorMessage"]';
+
+            if (successMessage && successMessage.length > 0) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: successMessage,
+                    confirmButtonColor: '#3085d6'
+                });
+            }
+
+            if (errorMessage && errorMessage.length > 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: errorMessage,
+                    confirmButtonColor: '#d33'
+                });
+            }
+        });
+    </script>
+}

@@ -1,0 +1,11 @@
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\bin\Debug\net9.0\Restaurant.Entities.deps.json
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\bin\Debug\net9.0\Restaurant.Entities.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\bin\Debug\net9.0\Restaurant.Entities.pdb
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\Restaurant.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\Restaurant.Entities.AssemblyInfoInputs.cache
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\Restaurant.Entities.AssemblyInfo.cs
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\Restaurant.Entities.csproj.CoreCompileInputs.cache
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\Restaurant.Entities.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\refint\Restaurant.Entities.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\Restaurant.Entities.pdb
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Entities\obj\Debug\net9.0\ref\Restaurant.Entities.dll

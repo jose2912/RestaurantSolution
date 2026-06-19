@@ -1,0 +1,256 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\controllers\\pedidoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\controllers\\pedidoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2533C55-544E-42D5-B793-BC5A8226EEB1}|Restaurant.Data\\Restaurant.Data.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.data\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2533C55-544E-42D5-B793-BC5A8226EEB1}|Restaurant.Data\\Restaurant.Data.csproj|solutionrelative:restaurant.data\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\views\\pedidos\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\views\\pedidos\\form.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{217F46CC-DCC8-4085-9048-D0C5C92E6D3D}|Restaurant.Entities\\Restaurant.Entities.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{217F46CC-DCC8-4085-9048-D0C5C92E6D3D}|Restaurant.Entities\\Restaurant.Entities.csproj|solutionrelative:restaurant.entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\views\\documentos\\precuenta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\views\\documentos\\precuenta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{217F46CC-DCC8-4085-9048-D0C5C92E6D3D}|Restaurant.Entities\\Restaurant.Entities.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.entities\\precuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{217F46CC-DCC8-4085-9048-D0C5C92E6D3D}|Restaurant.Entities\\Restaurant.Entities.csproj|solutionrelative:restaurant.entities\\precuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\controllers\\documentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\controllers\\documentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\views\\documentos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\views\\documentos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FD1F945-D719-4DC4-9EA9-AA186CA45557}|Restaurant.Business\\Restaurant.Business.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.business\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FD1F945-D719-4DC4-9EA9-AA186CA45557}|Restaurant.Business\\Restaurant.Business.csproj|solutionrelative:restaurant.business\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.web\\views\\pedidos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B62EAEB1-E796-46BC-B2E8-8C4DAFFE4045}|Restaurant.Web\\Restaurant.Web.csproj|solutionrelative:restaurant.web\\views\\pedidos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2533C55-544E-42D5-B793-BC5A8226EEB1}|Restaurant.Data\\Restaurant.Data.csproj|d:\\trabajo\\restaurante\\restaurantsolution\\restaurant.data\\documentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2533C55-544E-42D5-B793-BC5A8226EEB1}|Restaurant.Data\\Restaurant.Data.csproj|solutionrelative:restaurant.data\\documentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 19,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Entities\\Pedido.cs",
+              "RelativeDocumentMoniker": "Restaurant.Entities\\Pedido.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Entities\\Pedido.cs",
+              "RelativeToolTip": "Restaurant.Entities\\Pedido.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T22:03:57.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Precuenta.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Entities\\Precuenta.cs",
+              "RelativeDocumentMoniker": "Restaurant.Entities\\Precuenta.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Entities\\Precuenta.cs",
+              "RelativeToolTip": "Restaurant.Entities\\Precuenta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T21:58:03.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Restaurant.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-19T21:30:55.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form.cshtml",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Pedidos\\Form.cshtml",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Views\\Pedidos\\Form.cshtml",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Pedidos\\Form.cshtml",
+              "RelativeToolTip": "Restaurant.Web\\Views\\Pedidos\\Form.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAADgvwQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-19T21:28:59.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Documentos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Views\\Documentos\\Index.cshtml",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Documentos\\Index.cshtml",
+              "RelativeToolTip": "Restaurant.Web\\Views\\Documentos\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-19T21:27:31.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Precuenta.cshtml",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Documentos\\Precuenta.cshtml",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Views\\Documentos\\Precuenta.cshtml",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Documentos\\Precuenta.cshtml",
+              "RelativeToolTip": "Restaurant.Web\\Views\\Documentos\\Precuenta.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-19T21:25:14.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DocumentoService.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Business\\DocumentoService.cs",
+              "RelativeDocumentMoniker": "Restaurant.Business\\DocumentoService.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Business\\DocumentoService.cs",
+              "RelativeToolTip": "Restaurant.Business\\DocumentoService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T21:06:27.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DocumentosController.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Controllers\\DocumentosController.cs",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Controllers\\DocumentosController.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Controllers\\DocumentosController.cs",
+              "RelativeToolTip": "Restaurant.Web\\Controllers\\DocumentosController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAQwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T21:00:23.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PedidoRepository.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Data\\PedidoRepository.cs",
+              "RelativeDocumentMoniker": "Restaurant.Data\\PedidoRepository.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Data\\PedidoRepository.cs",
+              "RelativeToolTip": "Restaurant.Data\\PedidoRepository.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAWwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T19:41:26.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Pedidos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Views\\Pedidos\\Index.cshtml",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Views\\Pedidos\\Index.cshtml",
+              "RelativeToolTip": "Restaurant.Web\\Views\\Pedidos\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-19T19:38:47.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DocumentoRepository.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Data\\DocumentoRepository.cs",
+              "RelativeDocumentMoniker": "Restaurant.Data\\DocumentoRepository.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Data\\DocumentoRepository.cs",
+              "RelativeToolTip": "Restaurant.Data\\DocumentoRepository.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAgwKkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T19:19:05.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PedidosController.cs",
+              "DocumentMoniker": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Controllers\\PedidosController.cs",
+              "RelativeDocumentMoniker": "Restaurant.Web\\Controllers\\PedidosController.cs",
+              "ToolTip": "D:\\Trabajo\\Restaurante\\RestaurantSolution\\Restaurant.Web\\Controllers\\PedidosController.cs",
+              "RelativeToolTip": "Restaurant.Web\\Controllers\\PedidosController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T00:21:55.814Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
