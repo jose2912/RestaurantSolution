@@ -64,6 +64,7 @@ D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\Res
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\Restaurant.WebAPI.csproj.CoreCompileInputs.cache
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\Restaurant.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\Restaurant.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\Restaurant.WebAPI.sourcelink.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\rjimswa.dswa.cache.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.WebAPI\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json

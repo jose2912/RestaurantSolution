@@ -64,6 +64,7 @@ D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restau
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restaurant.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restaurant.Web.RazorAssemblyInfo.cache
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restaurant.Web.RazorAssemblyInfo.cs
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restaurant.Web.sourcelink.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
@@ -145,3 +146,13 @@ D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\refint
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restaurant.Web.pdb
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\Restaurant.Web.genruntimeconfig.cache
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\obj\Debug\net9.0\ref\Restaurant.Web.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\iTextSharp.LGPLv2.Core.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\SkiaSharp.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\osx\native\libSkiaSharp.dylib
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\win-arm64\native\libSkiaSharp.pdb
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\win-x64\native\libSkiaSharp.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\win-x64\native\libSkiaSharp.pdb
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\win-x86\native\libSkiaSharp.dll
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Web\bin\Debug\net9.0\runtimes\win-x86\native\libSkiaSharp.pdb

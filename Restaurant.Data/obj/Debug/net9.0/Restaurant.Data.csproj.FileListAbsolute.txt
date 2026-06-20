@@ -8,6 +8,7 @@ D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Resta
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Restaurant.Data.AssemblyInfoInputs.cache
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Restaurant.Data.AssemblyInfo.cs
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Restaurant.Data.csproj.CoreCompileInputs.cache
+D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Restaurant.Data.sourcelink.json
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Restaura.C7FCD0F2.Up2Date
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\Restaurant.Data.dll
 D:\Trabajo\Restaurante\RestaurantSolution\Restaurant.Data\obj\Debug\net9.0\refint\Restaurant.Data.dll
