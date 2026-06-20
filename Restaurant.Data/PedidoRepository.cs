@@ -1,6 +1,7 @@
-﻿using System.Data;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Restaurant.Entities;
+using System.Data;
+using System.Data.Common;
 
 namespace Restaurant.Data
 {
@@ -200,5 +201,19 @@ namespace Restaurant.Data
             return detalles;
         }
 
+        public bool EliminarDetalle(int detalleId)
+        {
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand("sp_EliminarDetallePedido", conn)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            cmd.Parameters.AddWithValue("@DetalleId", detalleId);
+
+            conn.Open();
+            int rows = cmd.ExecuteNonQuery();
+            return rows > 0;
+        }
     }
 }

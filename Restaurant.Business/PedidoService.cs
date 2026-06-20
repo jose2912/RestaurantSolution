@@ -61,5 +61,9 @@ namespace Restaurant.Business
         {
             return _pedidoRepository.CambiarEstado(id, nuevoEstado);
         }
+        public bool EliminarDetalle(int detalleId)
+        {
+            return _pedidoRepository.EliminarDetalle(detalleId);
+        }
     }
 }

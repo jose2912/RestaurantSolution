@@ -5,6 +5,8 @@
 <p><strong>Fecha:</strong> @(Model.FechaPedido?.ToString("dd/MM/yyyy") ?? "")</p>
 <p><strong>Estado:</strong> @Model.Estado</p>
 
+<!-- Mensaje de éxito o error -->
+<div id="mensaje"></div>
 <!-- Tabla de detalles -->
 @if (Model.DetallePedidos != null && Model.DetallePedidos.Any())
 {
@@ -21,18 +23,16 @@
         <tbody>
             @foreach (var detalle in Model.DetallePedidos)
             {
-                <tr>
-                    <!-- Mostrar nombre del producto en lugar de solo el ID -->
+                <tr id="fila-@detalle.DetalleId">
                     <td>@detalle.Producto?.Nombre</td>
                     <td>@detalle.Cantidad</td>
                     <td>@detalle.PrecioUnitario</td>
                     <td>@(detalle.Cantidad* detalle.PrecioUnitario)</td>
                     <td>
-                        <form asp-action="EliminarDetalle" method="post" style="display:inline">
-                            <input type="hidden" name="detalleId" value="@detalle.DetalleId" />
-                            <input type="hidden" name="pedidoId" value="@Model.PedidoId" />
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                        </form>
+                        <button class="btn btn-danger btn-eliminar"
+                                data-id="@detalle.DetalleId">
+                            Eliminar
+                        </button>
                     </td>
                 </tr>
             }
@@ -66,3 +66,36 @@ else
    asp-action="Index">
     Volver a la Lista
 </a>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).on("click", ".btn-eliminar", function (e) {
+            e.preventDefault();
+            var detalleId = $(this).data("id");
+
+            $.ajax({
+                url: '/Pedidos/EliminarDetalle',
+                type: 'POST',
+                data: { detalleId: detalleId },
+                success: function (response) {
+                    if (response.success) {
+                        $("#mensaje").html(
+                            '<div class="alert alert-success">' + response.message + '</div>'
+                        );
+                        $("#fila-" + detalleId).remove(); // elimina la fila directamente
+                    } else {
+                        $("#mensaje").html(
+                            '<div class="alert alert-danger">' + response.message + '</div>'
+                        );
+                    }
+                },
+                error: function () {
+                    $("#mensaje").html(
+                        '<div class="alert alert-danger">Error al eliminar el detalle.</div>'
+                    );
+                }
+            });
+        });
+    </script>
+    }

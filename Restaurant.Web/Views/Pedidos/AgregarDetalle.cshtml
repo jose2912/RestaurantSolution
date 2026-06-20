@@ -6,6 +6,8 @@
 
 <h2>Agregar Producto al Pedido</h2>
 
+<!-- Aquí agregamos el resumen de validación -->
+<div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="AgregarDetalle" method="post">
     <input type="hidden" asp-for="PedidoId" />
 
@@ -15,7 +17,7 @@
             <option value="">-- Seleccione un producto --</option>
             @if (productos != null)
             {
-                @foreach (var p in productos)
+                foreach (var p in productos)
                 {
                     <option value="@p.ProductoId">@p.Nombre (@p.PrecioUnitario)</option>
                 }
@@ -38,5 +40,4 @@
 
     <button type="submit" class="btn btn-success">Guardar</button>
     <a asp-controller="Pedidos" asp-action="Detalle" asp-route-id="@Model.PedidoId" class="btn btn-secondary">Volver</a>
-
 </form>

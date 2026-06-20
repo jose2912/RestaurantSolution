@@ -48,14 +48,22 @@ namespace Restaurant.Web.Controllers
             {
                 return View("Form", pedido);
             }
+            if (pedido.FechaPedido != null)
+            {
 
-            pedido.Estado = "Generado";
-            _pedidoService.CrearPedido(pedido);
+                pedido.Estado = "Generado";
+                _pedidoService.CrearPedido(pedido);
 
-            TempData["SuccessMessage"] = "Pedido creado correctamente.";
-            return RedirectToAction("Index");
+                TempData["SuccessMessage"] = "Pedido creado correctamente.";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Debes seleccionar la fecha.";
+                return RedirectToAction("Index");
+            }
+
         }
-
 
         [HttpPost]
         public IActionResult CambiarEstado(int id, string estado)
@@ -99,27 +107,6 @@ namespace Restaurant.Web.Controllers
             TempData["SuccessMessage"] = $"Precuenta generada correctamente. Documento ID: {nuevoDocId}";
             return RedirectToAction("Index", "Documentos");
         }
-        //[HttpGet]
-        //public IActionResult AgregarDetalle(int pedidoId)
-        //{
-        //    ViewBag.Productos = _pedidoService.ObtenerProductos();
-        //    return View(new DetallePedido { PedidoId = pedidoId });
-        //}
-
-
-        //[HttpPost]
-        //public IActionResult AgregarDetalle(DetallePedido detalle)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _pedidoService.AgregarDetalle(detalle);
-        //        return RedirectToAction("Detalle", new { id = detalle.PedidoId });
-        //    }
-
-        //    // Si falla la validación, recarga productos y vuelve a la vista
-        //    ViewBag.Productos = _pedidoService.ObtenerProductos();
-        //    return View(detalle);
-        //}
         [HttpGet]
         public IActionResult AgregarDetalle(int pedidoId)
         {
@@ -135,7 +122,7 @@ namespace Restaurant.Web.Controllers
         [HttpPost]
         public IActionResult AgregarDetalle(DetallePedido detalle)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid )
             {
                 // Guardar el detalle en la base
                 _pedidoService.AgregarDetalle(detalle);
@@ -170,5 +157,16 @@ namespace Restaurant.Web.Controllers
             TempData["SuccessMessage"] = "Pedido eliminado correctamente.";
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        [HttpPost]
+        public IActionResult EliminarDetalle(int detalleId)
+        {
+            var ok = _pedidoService.EliminarDetalle(detalleId);
+            if (!ok) return Json(new { success = false, message = "No se pudo eliminar el detalle." });
+
+            return Json(new { success = true, message = "Detalle eliminado correctamente." });
+        }
+
+
     }
 }
