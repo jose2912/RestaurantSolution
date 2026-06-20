@@ -1,7 +1,7 @@
 use RestauranteDB
 go
 -- SP para calcular totales de un pedido
-CREATE PROCEDURE sp_CalcularTotalesPedido
+CREATE OR ALTER PROCEDURE sp_CalcularTotalesPedido
     @PedidoId INT
 AS
 BEGIN
@@ -40,7 +40,7 @@ GO
 -- =============================================
 -- SP: Obtener Pedido por Id
 -- =============================================
-CREATE PROCEDURE sp_ObtenerPedidoPorId
+CREATE OR ALTER PROCEDURE sp_ObtenerPedidoPorId
     @PedidoId INT
 AS
 BEGIN
@@ -56,7 +56,7 @@ GO
 -- =============================================
 -- SP: Crear Pedido
 -- =============================================
-CREATE PROCEDURE sp_CrearPedido
+CREATE OR ALTER PROCEDURE sp_CrearPedido
     @FechaPedido DATETIME
 AS
 BEGIN
@@ -72,7 +72,7 @@ GO
 -- =============================================
 -- SP: Cambiar Estado de Pedido
 -- =============================================
-CREATE PROCEDURE sp_CambiarEstadoPedido
+CREATE OR ALTER PROCEDURE sp_CambiarEstadoPedido
     @PedidoId INT,
     @Estado NVARCHAR(20)
 AS
@@ -85,7 +85,7 @@ BEGIN
 END;
 GO
 -- SP: Agregar Detalle de Pedido
-CREATE PROCEDURE sp_AgregarDetallePedido
+CREATE OR ALTER PROCEDURE sp_AgregarDetallePedido
     @PedidoId INT,
     @ProductoId INT,
     @Cantidad INT,
@@ -100,25 +100,6 @@ END;
 GO
 
 -- SP: Generar Documento de Pago
---CREATE PROCEDURE sp_GenerarDocumentoPago
---    @PedidoId INT
---AS
---BEGIN
---    SET NOCOUNT ON;
-
---    DECLARE @Total DECIMAL(10,2);
-
---    SELECT @Total = Total
---    FROM Pedido
---    WHERE PedidoId = @PedidoId;
-
---    INSERT INTO DocumentoPago (PedidoId, Total)
---    VALUES (@PedidoId, @Total);
-
---    SELECT SCOPE_IDENTITY() AS NuevoDocumentoId;
---END;
---GO
-
 CREATE OR ALTER PROCEDURE sp_GenerarDocumentoPago
     @PedidoId INT,
     @FechaDocumento DATETIME,
@@ -137,13 +118,15 @@ BEGIN
     END
     ELSE
     BEGIN
-        RAISERROR('El PedidoId no existe en la tabla Pedido.', 16, 1);
+        -- No lanzar error, devolver NULL
+        SELECT NULL;
     END
 END;
 GO
 
+
 -- SP: Obtener detalles de un pedido
-CREATE PROCEDURE sp_ObtenerDetallesPorPedido
+CREATE OR ALTER PROCEDURE sp_ObtenerDetallesPorPedido
     @PedidoId INT
 AS
 BEGIN
@@ -156,15 +139,15 @@ END;
 GO
 
 -- SP: Eliminar detalle de un pedido
-CREATE PROCEDURE sp_EliminarDetallePedido
+CREATE OR ALTER PROCEDURE sp_EliminarDetallePedido
     @DetalleId INT
 AS
 BEGIN
-    SET NOCOUNT ON;
+    -- Quita esta línea si quieres contar filas
+    -- SET NOCOUNT ON;
 
-    DELETE FROM DetallePedido
-    WHERE DetalleId = @DetalleId;
-END;
+    DELETE FROM DetallePedido WHERE DetalleId = @DetalleId;
+END
 GO
 
 CREATE OR ALTER PROCEDURE sp_EliminarPedido
@@ -173,25 +156,23 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    BEGIN TRY
-        BEGIN TRANSACTION;
+    -- Verificar si el pedido tiene documentos asociados
+    IF EXISTS (SELECT 1 FROM DocumentoPago WHERE PedidoId = @PedidoId)
+    BEGIN
+        -- No eliminar, devolver 0 filas afectadas
+        RETURN 0;
+    END
 
-        -- 1. Eliminar detalles asociados
-        DELETE FROM DetallePedido
-        WHERE PedidoId = @PedidoId;
+    -- Eliminar detalles primero
+    DELETE FROM DetallePedido WHERE PedidoId = @PedidoId;
 
-        -- 2. Eliminar el pedido
-        DELETE FROM Pedido
-        WHERE PedidoId = @PedidoId;
+    -- Eliminar pedido
+    DELETE FROM Pedido WHERE PedidoId = @PedidoId;
 
-        COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        ROLLBACK TRANSACTION;
-        THROW;
-    END CATCH
+    RETURN @@ROWCOUNT; -- devuelve 1 si se eliminó, 0 si no
 END;
 GO
+
 
 CREATE OR ALTER PROCEDURE [dbo].[sp_CambiarEstadoDocumento]
     @DocumentoId INT,
@@ -214,7 +195,7 @@ BEGIN
     END
 END;
 
-
+--Registro de datos
 INSERT INTO [RestauranteDB].[dbo].[Producto] (Nombre, PrecioUnitario, Categoria)
 VALUES 
 ('Pizza', 25.00, 'Comida'),
