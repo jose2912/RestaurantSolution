@@ -39,6 +39,11 @@ namespace Restaurant.Web.Controllers
         [HttpPost]
         public IActionResult Crear(Pedido pedido)
         {
+            var errors = ModelState.Values
+    .SelectMany(v => v.Errors)
+    .Select(e => e.ErrorMessage)
+    .ToList();
+
             if (!ModelState.IsValid)
             {
                 return View("Form", pedido);
@@ -94,15 +99,37 @@ namespace Restaurant.Web.Controllers
             TempData["SuccessMessage"] = $"Precuenta generada correctamente. Documento ID: {nuevoDocId}";
             return RedirectToAction("Index", "Documentos");
         }
+        //[HttpGet]
+        //public IActionResult AgregarDetalle(int pedidoId)
+        //{
+        //    ViewBag.Productos = _pedidoService.ObtenerProductos();
+        //    return View(new DetallePedido { PedidoId = pedidoId });
+        //}
 
 
+        //[HttpPost]
+        //public IActionResult AgregarDetalle(DetallePedido detalle)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _pedidoService.AgregarDetalle(detalle);
+        //        return RedirectToAction("Detalle", new { id = detalle.PedidoId });
+        //    }
+
+        //    // Si falla la validación, recarga productos y vuelve a la vista
+        //    ViewBag.Productos = _pedidoService.ObtenerProductos();
+        //    return View(detalle);
+        //}
         [HttpGet]
         public IActionResult AgregarDetalle(int pedidoId)
         {
-            var productos = _pedidoService.ObtenerProductos();
-            ViewBag.PedidoId = pedidoId;
-            ViewBag.Productos = productos;
-            return View(new DetallePedido { PedidoId = pedidoId });
+            // Cargar productos para el combo
+            ViewBag.Productos = _pedidoService.ObtenerProductos();
+
+            // Inicializar el modelo con el PedidoId
+            var detalle = new DetallePedido { PedidoId = pedidoId };
+
+            return View(detalle);
         }
 
         [HttpPost]
@@ -110,12 +137,25 @@ namespace Restaurant.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Guardar el detalle en la base
                 _pedidoService.AgregarDetalle(detalle);
+
+                // Redirigir al detalle del pedido
                 return RedirectToAction("Detalle", new { id = detalle.PedidoId });
             }
+
+            // Si falla la validación, mostrar errores y recargar productos
+            var errores = ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage)
+                .ToList();
+
+            TempData["ErrorMessage"] = string.Join(" | ", errores);
+
             ViewBag.Productos = _pedidoService.ObtenerProductos();
             return View(detalle);
         }
+
 
         [HttpPost]
         public IActionResult Eliminar(int id)

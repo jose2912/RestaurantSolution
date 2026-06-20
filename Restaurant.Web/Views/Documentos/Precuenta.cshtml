@@ -5,23 +5,23 @@
 <table class="table table-bordered">
     <tr>
         <th>SubTotal</th>
-        <td>@Model.SubTotal</td>
+        <td>@Model.SubTotal.ToString("N2")</td>
     </tr>
     <tr>
         <th>Descuento</th>
-        <td>@Model.Descuento</td>
+        <td>@Model.Descuento.ToString("N2")</td>
     </tr>
     <tr>
         <th>Impuesto</th>
-        <td>@Model.Impuesto</td>
+        <td>@Model.Impuesto.ToString("N2")</td>
     </tr>
     <tr>
         <th>Recargo</th>
-        <td>@Model.Recargo</td>
+        <td>@Model.Recargo.ToString("N2")</td>
     </tr>
     <tr>
         <th>Total</th>
-        <td><strong>@Model.Total</strong></td>
+        <td><strong>@Model.Total.ToString("N2")l</strong></td>
     </tr>
 </table>
 

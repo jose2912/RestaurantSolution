@@ -2,12 +2,15 @@
 
 <h2>Formulario de Pedido</h2>
 
-<form asp-action="Crear" method="post">    
+<form asp-action="Crear" method="post">
     <div class="form-group">
         <label asp-for="FechaPedido"></label>
         <input asp-for="FechaPedido" type="date" class="form-control" />
         <span asp-validation-for="FechaPedido" class="text-danger"></span>
     </div>
+
+    <!-- Campo oculto para el Estado -->
+    <input type="hidden" asp-for="Estado" value="Generado" />
 
     <p><strong>Estado inicial:</strong> Generado</p>
 

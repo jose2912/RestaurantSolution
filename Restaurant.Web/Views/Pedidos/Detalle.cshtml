@@ -2,6 +2,7 @@
 @using Restaurant.Entities
 
 <h2>Detalles del Pedido @Model.PedidoId</h2>
+<p><strong>Fecha:</strong> @(Model.FechaPedido?.ToString("dd/MM/yyyy") ?? "")</p>
 <p><strong>Estado:</strong> @Model.Estado</p>
 
 <!-- Tabla de detalles -->

@@ -7,7 +7,7 @@
 <h2>Agregar Producto al Pedido</h2>
 
 <form asp-action="AgregarDetalle" method="post">
-    <input type="hidden" asp-for="PedidoId" value="@ViewBag.PedidoId" />
+    <input type="hidden" asp-for="PedidoId" />
 
     <div class="form-group">
         <label asp-for="ProductoId">Producto</label>
@@ -37,5 +37,6 @@
     </div>
 
     <button type="submit" class="btn btn-success">Guardar</button>
-    <a asp-controller="Pedidos" asp-action="Detalle" asp-route-id="@ViewBag.PedidoId" class="btn btn-secondary">Volver</a>
+    <a asp-controller="Pedidos" asp-action="Detalle" asp-route-id="@Model.PedidoId" class="btn btn-secondary">Volver</a>
+
 </form>

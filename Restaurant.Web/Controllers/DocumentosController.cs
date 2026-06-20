@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Restaurant.Business;   // tu capa de servicios
+using Restaurant.Business;   
 using Restaurant.Entities;   // entidad DocumentoPago
 
 namespace Restaurant.Web.Controllers
@@ -13,7 +13,6 @@ namespace Restaurant.Web.Controllers
             _documentoService = documentoService;
         }
 
-        // Mostrar lista de documentos
         public IActionResult Index()
         {
             IEnumerable<DocumentoPago> documentos = _documentoService.ListarDocumentos();
