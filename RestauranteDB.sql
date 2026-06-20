@@ -1,4 +1,4 @@
--- Creación de Base de Datos
+-- CreaciÃ³n de Base de Datos
 CREATE DATABASE RestauranteDB;
 GO
 USE RestauranteDB;
