@@ -10,27 +10,30 @@
     <input type="hidden" asp-for="PedidoId" value="@ViewBag.PedidoId" />
 
     <div class="form-group">
-        <label>Producto</label>
+        <label asp-for="ProductoId">Producto</label>
         <select asp-for="ProductoId" class="form-control" required>
-           <option value="">-- Seleccione un producto --</option>
-           @if (productos != null)
-           {
+            <option value="">-- Seleccione un producto --</option>
+            @if (productos != null)
+            {
                 @foreach (var p in productos)
                 {
                     <option value="@p.ProductoId">@p.Nombre (@p.PrecioUnitario)</option>
                 }
-           }
+            }
         </select>
+        <span asp-validation-for="ProductoId" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>Cantidad</label>
+        <label asp-for="Cantidad"></label>
         <input asp-for="Cantidad" class="form-control" required />
+        <span asp-validation-for="Cantidad" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label>Precio Unitario</label>
+        <label asp-for="PrecioUnitario"></label>
         <input asp-for="PrecioUnitario" class="form-control" step="0.01" required />
+        <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-success">Guardar</button>

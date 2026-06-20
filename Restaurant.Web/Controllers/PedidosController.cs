@@ -41,10 +41,10 @@ namespace Restaurant.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(pedido); // vuelve a mostrar el formulario con errores
+                return View("Form", pedido);
             }
 
-            pedido.Estado = "Generado"; // estado inicial fijo
+            pedido.Estado = "Generado";
             _pedidoService.CrearPedido(pedido);
 
             TempData["SuccessMessage"] = "Pedido creado correctamente.";
@@ -61,33 +61,7 @@ namespace Restaurant.Web.Controllers
             return RedirectToAction("Detalle", new { id });
         }
 
-        // Acción Precuenta extendida
-        //public IActionResult Precuenta(int id)
-        //{
-        //    // Validar que se haya enviado un id válido
-        //    if (id <= 0)
-        //    {
-        //        TempData["ErrorMessage"] = "Debe seleccionar un pedido válido para generar la precuenta.";
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    var precuenta = _pedidoService.CalcularTotales(id);
-        //    if (precuenta == null)
-        //    {
-        //        TempData["ErrorMessage"] = "No se pudo calcular la precuenta porque el pedido no existe.";
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    int nuevoDocId = _documentoService.GenerarDocumentoPago(id);
-        //    if (nuevoDocId <= 0)
-        //    {
-        //        TempData["ErrorMessage"] = "No se pudo generar el documento porque el pedido no existe.";
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    TempData["SuccessMessage"] = $"Precuenta generada correctamente. Documento ID: {nuevoDocId}";
-        //    return RedirectToAction("Index", "Documentos");
-        //}
+      
         public IActionResult Precuenta(int id)
         {
             if (id <= 0)

@@ -25,6 +25,13 @@
                     <td>@doc.Total</td>
                     <td>@doc.Estado</td>
                     <td>
+                        <!-- Botón para descargar el PDF -->
+                        <a asp-controller="Documentos" asp-action="Descargar" asp-route-id="@doc.PedidoId"
+                           class="btn btn-primary btn-sm">
+                            Descargar PDF
+                        </a>
+
+                        <!-- Botones para cambiar estado -->
                         <form asp-controller="Documentos" asp-action="CambiarEstado" method="post" style="display:inline">
                             <input type="hidden" name="id" value="@doc.DocumentoId" />
                             <input type="hidden" name="estado" value="Facturado" />

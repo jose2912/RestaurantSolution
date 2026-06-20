@@ -34,21 +34,7 @@ namespace Restaurant.Web.Controllers
                 TempData["SuccessMessage"] = $"Documento generado correctamente (ID: {nuevoId}).";
             }
             return RedirectToAction("Index");
-        }
-        //[HttpPost]
-        //public IActionResult CambiarEstado(int id, string estado)
-        //{
-        //    var ok = _documentoService.CambiarEstadoDocumento(id, estado);
-        //    if (!ok)
-        //    {
-        //        TempData["ErrorMessage"] = "No se pudo cambiar el estado del documento.";
-        //    }
-        //    else
-        //    {
-        //        TempData["SuccessMessage"] = $"Estado del documento {id} cambiado a {estado}.";
-        //    }
-        //    return RedirectToAction("Index");
-        //}
+        }       
         [HttpPost]
         public IActionResult CambiarEstado(int id, string estado)
         {
@@ -101,6 +87,13 @@ namespace Restaurant.Web.Controllers
             return RedirectToAction("Index", "Documentos");
         }
 
+        public IActionResult Descargar(int id)
+        {
+            var pdfBytes = _documentoService.ObtenerPdfPorId(id);
+            if (pdfBytes == null) return NotFound();
+
+            return File(pdfBytes, "application/pdf", $"Documento_{id}.pdf");
+        }
 
     }
 }

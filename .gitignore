@@ -1,0 +1,21 @@
+# Ignorar archivos generados automáticamente
+bin/
+obj/
+.vs/
+
+# Archivos de compilación
+*.dll
+*.pdb
+*.exe
+*.cache
+*.log
+
+# Archivos de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configuración temporal
+*.json
+*.db

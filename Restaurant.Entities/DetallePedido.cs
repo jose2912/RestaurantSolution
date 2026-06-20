@@ -9,5 +9,7 @@
         public decimal PrecioUnitario { get; set; }
 
         public decimal TotalLinea => Cantidad * PrecioUnitario;
+        // Relación
+        public Producto Producto { get; set; }
     }
 }

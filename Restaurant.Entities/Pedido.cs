@@ -6,7 +6,7 @@ namespace Restaurant.Entities
     public class Pedido
     {
         public int PedidoId { get; set; }
-        public int ClienteId { get; set; }
+        //public int ClienteId { get; set; }
         [Required(ErrorMessage = "Debe seleccionar la fecha del pedido.")]
         [DataType(DataType.Date)]
         public DateTime? FechaPedido { get; set; }   

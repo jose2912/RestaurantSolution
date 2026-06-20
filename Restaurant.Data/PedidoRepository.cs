@@ -14,25 +14,34 @@ namespace Restaurant.Data
         }
 
         // Obtener pedido por Id
-        public Pedido? ObtenerPedidoPorId(int id)
+        public Pedido ObtenerPedidoPorId(int pedidoId)
         {
+            Pedido pedido = null;
             using var conn = new SqlConnection(_connectionString);
             using var cmd = new SqlCommand("sp_ObtenerPedidoPorId", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@PedidoId", id);
+            cmd.Parameters.AddWithValue("@PedidoId", pedidoId);
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                return new Pedido
+                pedido = new Pedido
                 {
-                    PedidoId = (int)reader["PedidoId"],
-                    FechaPedido = (DateTime)reader["FechaPedido"],
-                    Estado = reader["Estado"].ToString()!
+                    PedidoId = reader.GetInt32(reader.GetOrdinal("PedidoId")),
+                    FechaPedido = reader.GetDateTime(reader.GetOrdinal("FechaPedido")),
+                    Estado = reader.GetString(reader.GetOrdinal("Estado")),
+                    DetallePedidos = new List<DetallePedido>()
                 };
             }
-            return null;
+
+            // Si el pedido existe, cargar sus detalles en una segunda consulta
+            if (pedido != null)
+            {
+                pedido.DetallePedidos = ObtenerDetallesPorPedido(pedidoId).ToList();
+            }
+
+            return pedido;
         }
 
         // Crear pedido
@@ -117,39 +126,7 @@ namespace Restaurant.Data
                 });
             }
             return pedidos;
-        }
-        //public bool EliminarPedido(int id)
-        //{
-        //    using var conn = new SqlConnection(_connectionString);
-        //    conn.Open();
-
-        //    using var tran = conn.BeginTransaction();
-
-        //    try
-        //    {
-        //        // 1. Eliminar detalles asociados
-        //        using (var cmdDetalles = new SqlCommand("DELETE FROM DetallePedido WHERE PedidoId = @Id", conn, tran))
-        //        {
-        //            cmdDetalles.Parameters.AddWithValue("@Id", id);
-        //            cmdDetalles.ExecuteNonQuery();
-        //        }
-
-        //        // 2. Eliminar el pedido
-        //        using (var cmdPedido = new SqlCommand("DELETE FROM Pedido WHERE PedidoId = @Id", conn, tran))
-        //        {
-        //            cmdPedido.Parameters.AddWithValue("@Id", id);
-        //            int rows = cmdPedido.ExecuteNonQuery();
-
-        //            tran.Commit();
-        //            return rows > 0;
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        tran.Rollback();
-        //        return false;
-        //    }
-        //}
+        }       
         public bool EliminarPedido(int id)
         {
             using var conn = new SqlConnection(_connectionString);
@@ -193,7 +170,12 @@ namespace Restaurant.Data
         {
             var detalles = new List<DetallePedido>();
             using var conn = new SqlConnection(_connectionString);
-            var query = "SELECT DetalleId, PedidoId, ProductoId, Cantidad, PrecioUnitario FROM DetallePedido WHERE PedidoId = @PedidoId";
+
+            var query = @"SELECT d.DetalleId, d.PedidoId, d.ProductoId, d.Cantidad, d.PrecioUnitario,
+                         p.Nombre
+                  FROM DetallePedido d
+                  INNER JOIN Producto p ON d.ProductoId = p.ProductoId
+                  WHERE d.PedidoId = @PedidoId";
             using var cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@PedidoId", pedidoId);
 
@@ -207,8 +189,12 @@ namespace Restaurant.Data
                     PedidoId = reader.GetInt32(1),
                     ProductoId = reader.GetInt32(2),
                     Cantidad = reader.GetInt32(3),
-                    PrecioUnitario = reader.GetDecimal(4)
-                    //TotalLinea = reader.GetInt32(3) * reader.GetDecimal(4) // Cantidad * PrecioUnitario
+                    PrecioUnitario = reader.GetDecimal(4),
+                    Producto = new Producto
+                    {
+                        ProductoId = reader.GetInt32(2),
+                        Nombre = reader.GetString(5)
+                    }
                 });
             }
             return detalles;

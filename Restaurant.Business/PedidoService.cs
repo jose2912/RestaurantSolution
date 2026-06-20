@@ -10,12 +10,21 @@ namespace Restaurant.Business
         public PedidoService(PedidoRepository pedidoRepository)
         {
             _pedidoRepository = pedidoRepository;
-        }
-
-        public Pedido? ObtenerPedidoPorId(int id)
+        }                public Pedido ObtenerPedidoPorId(int id)
         {
-            return _pedidoRepository.ObtenerPedidoPorId(id);
-        }
+            var pedido = _pedidoRepository.ObtenerPedidoPorId(id);
+            if (pedido != null && pedido.DetallePedidos.Any())
+            {
+                pedido.SubTotal = pedido.DetallePedidos.Sum(d => d.Cantidad * d.PrecioUnitario);
+
+                // Reglas de negocio
+                pedido.Descuento = 0;
+                pedido.Impuesto = pedido.SubTotal * 0.18m; // IGV 18%
+                pedido.Recargo = 0;
+                pedido.Total = pedido.SubTotal - pedido.Descuento + pedido.Impuesto + pedido.Recargo;
+            }
+            return pedido;
+        }     
 
         public int CrearPedido(Pedido pedido)
         {
